@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booking</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      nav {
+        background: #0077b6;
+        padding: 10px;
+      }
+      nav a {
+        color: #fff;
+        margin: 0 10px;
+        text-decoration: none;
+      }
+      .container {
+        padding: 20px;
+      }
+      form {
+        max-width: 400px;
+        margin: 0 auto;
+        background: #f1f1f1;
+        padding: 20px;
+        border-radius: 8px;
+      }
+      label {
+        display: block;
+        margin-top: 10px;
+      }
+      input,
+      select {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+      }
+      button {
+        margin-top: 15px;
+        background: #0077b6;
+        color: #fff;
+        border: none;
+        padding: 10px;
+        width: 100%;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="packages.html">Packages</a>
+      <a href="booking.html">Booking</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+    <div class="container">
+      <h1>Book Your Trip</h1>
+      <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="dates">Travel Dates:</label>
+        <input type="date" id="dates" name="dates" required />
+
+        <label for="destination">Destination:</label>
+        <select id="destination" name="destination" required>
+          <option value="Goa">Goa</option>
+          <option value="Manali">Manali</option>
+          <option value="Delhi">Delhi</option>
+          <option value="Jaisalmer">Jaisalmer</option>
+        </select>
+
+        <label for="package">Package:</label>
+        <select id="package" name="package" required>
+          <option value="Beach Escape">Beach Escape</option>
+          <option value="Mountain Adventure">Mountain Adventure</option>
+          <option value="City Explorer">City Explorer</option>
+          <option value="Desert Safari">Desert Safari</option>
+        </select>
+
+        <button type="submit">Book Now</button>
+      </form>
+    </div>
+  </body>
+</html>
