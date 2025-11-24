@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Program 1</title>
+</head>
+<body>
+    <h2>Number Calculator</h2>
+    <script>
+        var a = parseFloat(prompt("Enter the first number:"));
+        var b = parseFloat(prompt("Enter the second number:"));
+        
+        console.log("Input Numbers:", a, "and", b);
+        
+        var addition = a + b;
+        var subtraction = a - b;
+        var multiplication = a * b;
+        var division = a / b;
+        
+        document.write("<h3>Results:</h3>");
+        document.write("Addition: " + a + " + " + b + " = " + addition + "<br>");
+        document.write("Subtraction: " + a + " - " + b + " = " + subtraction + "<br>");
+        document.write("Multiplication: " + a + " × " + b + " = " + multiplication + "<br>");
+        document.write("Division: " + a + " ÷ " + b + " = " + division + "<br>");
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Program 5</title>
+</head>
+<body>
+    <h2>Array Methods Demo</h2>
+    <script>
+        var dataArray = [11, 4, 18, 7, 22, 15, 6, 33];
+        
+        console.log("Starting array:", dataArray);
+        console.log("----------------------------");
+        
+        var filteredData = dataArray.filter(function(value) {
+            return value % 2 == 0;
+        });
+        console.log("Step 1 - Remove odd numbers (filter):");
+        console.log("Even numbers only:", filteredData);
+        console.log("----------------------------");
+        
+        var mappedData = filteredData.map(function(value) {
+            return value * 2;
+        });
+        console.log("Step 2 - Multiply by 2 (map):");
+        console.log("Doubled values:", mappedData);
+        console.log("----------------------------");
+        
+        var finalResult = mappedData.reduce(function(accumulator, currentValue) {
+            return accumulator + currentValue;
+        }, 0);
+        console.log("Step 3 - Calculate sum (reduce):");
+        console.log("Total sum:", finalResult);
+        console.log("----------------------------");
+        console.log("FINAL ANSWER:", finalResult);
+    </script>
+</body>
+</html>

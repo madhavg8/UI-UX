@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Program 2</title>
+</head>
+<body>
+    <h2>Array Operations</h2>
+    <script>
+        var arr = [34, 8, 56, 21, 12];
+        
+        console.log("Given Array:", arr);
+        
+        var largest = arr[0];
+        var smallest = arr[0];
+        
+        for(var i = 0; i < arr.length; i++) {
+            if(arr[i] > largest) {
+                largest = arr[i];
+            }
+            if(arr[i] < smallest) {
+                smallest = arr[i];
+            }
+        }
+        
+        console.log("Largest number is:", largest);
+        console.log("Smallest number is:", smallest);
+        
+        var sortedAsc = arr.slice();
+        for(var i = 0; i < sortedAsc.length; i++) {
+            for(var j = i + 1; j < sortedAsc.length; j++) {
+                if(sortedAsc[i] > sortedAsc[j]) {
+                    var temp = sortedAsc[i];
+                    sortedAsc[i] = sortedAsc[j];
+                    sortedAsc[j] = temp;
+                }
+            }
+        }
+        console.log("Ascending order:", sortedAsc);
+        
+        var sortedDesc = arr.slice().sort(function(x, y) {
+            return y - x;
+        });
+        console.log("Descending order:", sortedDesc);
+    </script>
+</body>
+</html>

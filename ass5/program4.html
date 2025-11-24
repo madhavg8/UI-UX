@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Program 4</title>
+</head>
+<body>
+    <h2>Student Information System</h2>
+    <script>
+        var studentData = {
+            name: "Priya Sharma",
+            age: 22,
+            grades: 72
+        };
+        
+        console.log("=== Original Student Data ===");
+        console.log(studentData);
+        
+        studentData["class"] = "MCA 2nd Semester";
+        console.log("\n=== After Adding Class Property ===");
+        console.log("Class added:", studentData.class);
+        
+        studentData.grades = 88;
+        console.log("\n=== After Updating Grades ===");
+        console.log("New grades:", studentData.grades);
+        
+        console.log("\n=== Complete Student Information ===");
+        console.log("Name:", studentData.name);
+        console.log("Age:", studentData.age);
+        console.log("Grades:", studentData.grades);
+        console.log("Class:", studentData.class);
+        
+        document.write("<h3>Student Details:</h3>");
+        document.write("<p>Name: " + studentData.name + "</p>");
+        document.write("<p>Age: " + studentData.age + "</p>");
+        document.write("<p>Grades: " + studentData.grades + "</p>");
+        document.write("<p>Class: " + studentData.class + "</p>");
+    </script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 5 - JavaScript Programs</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 1000px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #f5f5f5;
+        line-height: 1.6;
+      }
+      .container {
+        background: white;
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        color: #333;
+        text-align: center;
+        margin-bottom: 30px;
+        border-bottom: 3px solid #007bff;
+        padding-bottom: 15px;
+      }
+      .program-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        margin-top: 30px;
+      }
+      .program-card {
+        background: #f8f9fa;
+        padding: 25px;
+        border-radius: 10px;
+        border-left: 5px solid #007bff;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .program-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+      .program-card h3 {
+        color: #007bff;
+        margin-bottom: 15px;
+      }
+      .program-card p {
+        color: #666;
+        margin-bottom: 15px;
+      }
+      .program-card a {
+        display: inline-block;
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+      .program-card a:hover {
+        background-color: #0056b3;
+      }
+      .features {
+        background-color: #e9ecef;
+        padding: 15px;
+        border-radius: 5px;
+        margin: 10px 0;
+      }
+      .features ul {
+        margin: 0;
+        padding-left: 20px;
+      }
+      .features li {
+        margin: 5px 0;
+      }
+      .assignment-info {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 30px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="assignment-info">
+        <h1 style="border: none; color: white; margin: 0">
+          Assignment 5 - JavaScript Programs
+        </h1>
+        <p style="margin: 10px 0 0 0; font-size: 18px">
+          Interactive JavaScript applications demonstrating core programming
+          concepts
+        </p>
+      </div>
+
+      <div class="program-grid">
+        <div class="program-card">
+          <h3>Program 1: Basic Calculator</h3>
+          <p>
+            A JavaScript program that takes two numbers as input and displays
+            their sum, difference, product, and quotient.
+          </p>
+          <div class="features">
+            <strong>Features:</strong>
+            <ul>
+              <li>Input validation</li>
+              <li>Division by zero handling</li>
+              <li>Real-time calculations</li>
+              <li>Keyboard support (Enter key)</li>
+            </ul>
+          </div>
+          <a href="program1.html">Run Program 1</a>
+        </div>
+
+        <div class="program-card">
+          <h3>Program 2: Array Operations</h3>
+          <p>
+            Create an array of 5 numbers and perform various operations
+            including finding largest/smallest numbers and sorting.
+          </p>
+          <div class="features">
+            <strong>Features:</strong>
+            <ul>
+              <li>Find largest and smallest numbers</li>
+              <li>Sort in ascending/descending order</li>
+              <li>Random array generation</li>
+              <li>Interactive input fields</li>
+            </ul>
+          </div>
+          <a href="program2.html">Run Program 2</a>
+        </div>
+
+        <div class="program-card">
+          <h3>Program 3: Form Validation</h3>
+          <p>
+            A comprehensive form with JavaScript validation for name, email, and
+            age fields with real-time feedback.
+          </p>
+          <div class="features">
+            <strong>Validations:</strong>
+            <ul>
+              <li>Name field cannot be empty</li>
+              <li>Email format validation</li>
+              <li>Age between 18-100 years</li>
+              <li>Real-time error display</li>
+            </ul>
+          </div>
+          <a href="program3.html">Run Program 3</a>
+        </div>
+
+        <div class="program-card">
+          <h3>Program 4: Student Object</h3>
+          <p>
+            Create and manipulate a student object with properties like name,
+            age, and grades. Demonstrate object operations.
+          </p>
+          <div class="features">
+            <strong>Operations:</strong>
+            <ul>
+              <li>Add new property (class)</li>
+              <li>Update student grades</li>
+              <li>Display all information</li>
+              <li>Interactive object manipulation</li>
+            </ul>
+          </div>
+          <a href="program4.html">Run Program 4</a>
+        </div>
+
+        <div class="program-card">
+          <h3>Program 5: Array Methods</h3>
+          <p>
+            Demonstrate filter(), map(), and reduce() methods to remove odd
+            numbers, multiply by 2, and find the sum.
+          </p>
+          <div class="features">
+            <strong>Methods Used:</strong>
+            <ul>
+              <li>filter() - Remove odd numbers</li>
+              <li>map() - Multiply by 2</li>
+              <li>reduce() - Calculate sum</li>
+              <li>Step-by-step visualization</li>
+            </ul>
+          </div>
+          <a href="program5.html">Run Program 5</a>
+        </div>
+      </div>
+
+      <div style="margin-top: 40px; text-align: center; color: #666">
+        <p>
+          <strong>Technologies Used:</strong> HTML5, CSS3, JavaScript (ES6+)
+        </p>
+        <p>
+          <strong>Assignment Features:</strong> Interactive UI, Input
+          validation, Error handling, Real-time feedback
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

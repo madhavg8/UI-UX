@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Program 3</title>
+</head>
+<body>
+    <h2>Registration Form</h2>
+    <form id="registrationForm">
+        Name: <input type="text" id="fullname"><br><br>
+        Email: <input type="text" id="emailid"><br><br>
+        Age: <input type="text" id="userage"><br><br>
+        <button type="submit">Register</button>
+    </form>
+    <div id="output"></div>
+    
+    <script>
+        function validateForm(e) {
+            e.preventDefault();
+            
+            var nm = document.getElementById("fullname").value;
+            var em = document.getElementById("emailid").value;
+            var ag = document.getElementById("userage").value;
+            var result = document.getElementById("output");
+            
+            if(nm.trim() === "") {
+                result.innerHTML = "<p style='color:red'>Name cannot be empty!</p>";
+                return;
+            }
+            
+            var emailCheck = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if(!emailCheck.test(em)) {
+                result.innerHTML = "<p style='color:red'>Invalid email format!</p>";
+                return;
+            }
+            
+            var ageNum = parseInt(ag);
+            if(isNaN(ageNum)) {
+                result.innerHTML = "<p style='color:red'>Age must be a number!</p>";
+                return;
+            }
+            if(ageNum < 18 || ageNum > 100) {
+                result.innerHTML = "<p style='color:red'>Age must be between 18 and 100!</p>";
+                return;
+            }
+            
+            result.innerHTML = "<p style='color:green'>Registration successful!</p>";
+            console.log("Name:", nm, "| Email:", em, "| Age:", ag);
+        }
+        
+        document.getElementById("registrationForm").addEventListener("submit", validateForm);
+    </script>
+</body>
+</html>
