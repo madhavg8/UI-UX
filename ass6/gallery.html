@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gallery</title>
+    <style>
+        body { font-family: Arial; margin: 20px; }
+        nav { margin-bottom: 20px; }
+        nav a { margin-right: 15px; padding: 5px 10px; }
+        nav a.active { background: #333; color: white; }
+        #galleryGrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 900px; }
+        #galleryGrid.list-view { grid-template-columns: 1fr; }
+        .gallery-item img { width: 100%; height: 200px; object-fit: cover; cursor: pointer; border: 2px solid #ccc; }
+        .gallery-item img:hover { border-color: #333; }
+        .gallery-item h3 { margin: 8px 0 0 0; }
+        #layoutToggle { margin-bottom: 15px; padding: 8px 15px; }
+        #modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); }
+        #modal img { max-width: 80%; max-height: 80%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        #modal .close { position: absolute; top: 20px; right: 30px; color: white; font-size: 30px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>WanderWings Tours</h1>
+    <nav id="mainNav">
+        <a href="index.html">Home</a>
+        <a href="packages.html">Packages</a>
+        <a href="booking.html">Booking</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <h2>Gallery</h2>
+    <button id="layoutToggle">Toggle Layout</button>
+
+    <div id="galleryGrid"></div>
+
+    <div id="modal">
+        <span class="close">&times;</span>
+        <img id="modalImg" src="" alt="">
+    </div>
+
+    <script>
+        var galleryImages = [
+            { title: "Rishikesh River", thumb: "https://picsum.photos/400/300?random=1", large: "https://picsum.photos/800/600?random=1" },
+            { title: "Coorg Coffee Estates", thumb: "https://picsum.photos/400/300?random=2", large: "https://picsum.photos/800/600?random=2" },
+            { title: "Udaipur Lake Palace", thumb: "https://picsum.photos/400/300?random=3", large: "https://picsum.photos/800/600?random=3" },
+            { title: "Darjeeling Tea Garden", thumb: "https://picsum.photos/400/300?random=4", large: "https://picsum.photos/800/600?random=4" },
+            { title: "Varanasi Ghats", thumb: "https://picsum.photos/400/300?random=5", large: "https://picsum.photos/800/600?random=5" },
+            { title: "Mountain View", thumb: "https://picsum.photos/400/300?random=6", large: "https://picsum.photos/800/600?random=6" }
+        ];
+
+        function renderGallery() {
+            var grid = document.getElementById("galleryGrid");
+            grid.innerHTML = "";
+
+            for (var i = 0; i < galleryImages.length; i++) {
+                var img = galleryImages[i];
+                var item = document.createElement("div");
+                item.className = "gallery-item";
+                item.innerHTML = 
+                    '<img src="' + img.thumb + '" alt="' + img.title + '" data-large="' + img.large + '" title="' + img.title + '">' +
+                    '<h3>' + img.title + '</h3>';
+                grid.appendChild(item);
+            }
+
+            var thumbs = document.querySelectorAll(".gallery-item img");
+            for (var j = 0; j < thumbs.length; j++) {
+                thumbs[j].addEventListener("click", openModal);
+            }
+        }
+
+        function openModal(e) {
+            var modal = document.getElementById("modal");
+            var modalImg = document.getElementById("modalImg");
+            var largeUrl = e.target.getAttribute("data-large");
+            var title = e.target.getAttribute("title");
+
+            modalImg.src = largeUrl;
+            modalImg.alt = title;
+            modalImg.title = title;
+            modal.style.display = "block";
+        }
+
+        document.querySelector("#modal .close").addEventListener("click", function() {
+            document.getElementById("modal").style.display = "none";
+        });
+
+        document.getElementById("modal").addEventListener("click", function(e) {
+            if (e.target === this) {
+                this.style.display = "none";
+            }
+        });
+
+        document.getElementById("layoutToggle").addEventListener("click", function() {
+            var grid = document.getElementById("galleryGrid");
+            grid.classList.toggle("list-view");
+            this.textContent = grid.classList.contains("list-view") ? "Grid View" : "List View";
+        });
+
+        renderGallery();
+
+        var currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        var navLinks = document.querySelectorAll('#mainNav a');
+        for (var i = 0; i < navLinks.length; i++) {
+            if (navLinks[i].getAttribute('href') === currentPage) {
+                navLinks[i].classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>

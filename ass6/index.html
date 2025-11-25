@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Travel Agency - Home</title>
+    <style>
+        body { font-family: Arial; margin: 20px; }
+        nav { margin-bottom: 20px; }
+        nav a { margin-right: 15px; padding: 5px 10px; }
+        nav a.active { background: #333; color: white; }
+        img { border: 3px solid #ccc; border-radius: 8px; margin: 15px 0; }
+        a:hover { background: #555; color: white; }
+    </style>
+</head>
+<body>
+    <h1>WanderWings Tours</h1>
+    <nav id="mainNav">
+        <a href="index.html">Home</a>
+        <a href="packages.html">Packages</a>
+        <a href="booking.html">Booking</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800" alt="Travel Banner" width="800" height="300" />
+
+    <h2>Welcome to WanderWings Tours</h2>
+    <p>Your adventure starts here. Explore our packages, book your trip, and discover amazing destinations with us.</p>
+
+    <h3>Must-Visit Places</h3>
+    <ul>
+        <li>Rishikesh - River Rafting and Yoga</li>
+        <li>Coorg - Coffee Plantations</li>
+        <li>Udaipur - Lake City Palaces</li>
+        <li>Darjeeling - Tea Gardens</li>
+    </ul>
+
+    <script>
+        var currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        var navLinks = document.querySelectorAll('#mainNav a');
+        for (var i = 0; i < navLinks.length; i++) {
+            if (navLinks[i].getAttribute('href') === currentPage) {
+                navLinks[i].classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>

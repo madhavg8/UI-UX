@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Booking Form</title>
+    <style>
+        body { font-family: Arial; margin: 20px; }
+        nav { margin-bottom: 20px; }
+        nav a { margin-right: 15px; padding: 5px 10px; }
+        nav a.active { background: #333; color: white; }
+        input, select { width: 300px; padding: 5px; margin-bottom: 10px; }
+        #totalDisplay { font-size: 18px; font-weight: bold; margin: 15px 0; }
+        .error { color: red; font-size: 12px; }
+        button:disabled { background: #ccc; cursor: not-allowed; }
+    </style>
+</head>
+<body>
+    <h1>WanderWings Tours</h1>
+    <nav id="mainNav">
+        <a href="index.html">Home</a>
+        <a href="packages.html">Packages</a>
+        <a href="booking.html">Booking</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <h2>Book Your Trip</h2>
+    <form id="bookingForm">
+        <label>Name:</label><br>
+        <input type="text" id="name" required><br>
+        <span class="error" id="nameError"></span><br>
+
+        <label>Email:</label><br>
+        <input type="email" id="email" required><br>
+        <span class="error" id="emailError"></span><br>
+
+        <label>Phone:</label><br>
+        <input type="tel" id="phone" required><br>
+
+        <label>Check-In Date:</label><br>
+        <input type="date" id="checkIn" required><br>
+
+        <label>Check-Out Date:</label><br>
+        <input type="date" id="checkOut" required><br>
+
+        <label>Package:</label><br>
+        <select id="package" required>
+            <option value="">Select Package</option>
+            <option value="14000" data-dest="Rishikesh">Rishikesh - Rs. 14,000</option>
+            <option value="19000" data-dest="Coorg">Coorg - Rs. 19,000</option>
+            <option value="22000" data-dest="Udaipur">Udaipur - Rs. 22,000</option>
+            <option value="17000" data-dest="Darjeeling">Darjeeling - Rs. 17,000</option>
+            <option value="11000" data-dest="Varanasi">Varanasi - Rs. 11,000</option>
+        </select><br>
+
+        <label>Number of Guests:</label><br>
+        <input type="number" id="guests" value="1" min="1" max="10"><br>
+
+        <label>Promo Code:</label><br>
+        <input type="text" id="promoCode" placeholder="e.g., EARLYBIRD"><br>
+
+        <div id="totalDisplay">Estimated Total: Rs. 0</div>
+
+        <button type="submit" id="submitBtn" disabled>Book Now</button>
+    </form>
+
+    <script>
+        var packages = {
+            "Rishikesh": 14000,
+            "Coorg": 19000,
+            "Udaipur": 22000,
+            "Darjeeling": 17000,
+            "Varanasi": 11000
+        };
+
+        function validateName() {
+            var name = document.getElementById("name").value.trim();
+            var error = document.getElementById("nameError");
+            if (name === "") {
+                error.textContent = "Name is required";
+                return false;
+            }
+            error.textContent = "";
+            return true;
+        }
+
+        function validateEmail() {
+            var email = document.getElementById("email").value;
+            var error = document.getElementById("emailError");
+            var pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!pattern.test(email)) {
+                error.textContent = "Invalid email format";
+                return false;
+            }
+            error.textContent = "";
+            return true;
+        }
+
+        function calculateTotal() {
+            var checkIn = new Date(document.getElementById("checkIn").value);
+            var checkOut = new Date(document.getElementById("checkOut").value);
+            var packagePrice = parseInt(document.getElementById("package").value) || 0;
+            var guests = parseInt(document.getElementById("guests").value) || 1;
+            var promoCode = document.getElementById("promoCode").value.toUpperCase();
+
+            if (isNaN(checkIn.getTime()) || isNaN(checkOut.getTime())) {
+                return 0;
+            }
+
+            var nights = Math.ceil((checkOut - checkIn) / (1000 * 60 * 60 * 24));
+            if (nights <= 0) nights = 1;
+
+            var total = packagePrice * nights;
+
+            if (guests > 2) {
+                total = total * 1.2;
+            }
+
+            switch (promoCode) {
+                case "EARLYBIRD":
+                    total = total * 0.9;
+                    break;
+                case "SUMMER20":
+                    total = total * 0.8;
+                    break;
+                case "VIP":
+                    total = total * 0.85;
+                    break;
+            }
+
+            return Math.round(total);
+        }
+
+        function updateTotal() {
+            var total = calculateTotal();
+            document.getElementById("totalDisplay").textContent = "Estimated Total: Rs. " + total;
+        }
+
+        function validateForm() {
+            var isValid = validateName() && validateEmail();
+            var checkIn = document.getElementById("checkIn").value;
+            var checkOut = document.getElementById("checkOut").value;
+            var pkg = document.getElementById("package").value;
+
+            if (!checkIn || !checkOut || !pkg) {
+                isValid = false;
+            }
+
+            document.getElementById("submitBtn").disabled = !isValid;
+            return isValid;
+        }
+
+        document.getElementById("checkIn").addEventListener("change", function() {
+            updateTotal();
+            validateForm();
+        });
+        document.getElementById("checkOut").addEventListener("change", function() {
+            updateTotal();
+            validateForm();
+        });
+        document.getElementById("package").addEventListener("change", function() {
+            updateTotal();
+            validateForm();
+        });
+        document.getElementById("guests").addEventListener("change", updateTotal);
+        document.getElementById("promoCode").addEventListener("input", updateTotal);
+        document.getElementById("name").addEventListener("input", validateForm);
+        document.getElementById("email").addEventListener("input", validateForm);
+
+        document.getElementById("bookingForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+            if (validateForm()) {
+                alert("Booking successful! Total: Rs. " + calculateTotal());
+            }
+        });
+
+        var currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        var navLinks = document.querySelectorAll('#mainNav a');
+        for (var i = 0; i < navLinks.length; i++) {
+            if (navLinks[i].getAttribute('href') === currentPage) {
+                navLinks[i].classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
