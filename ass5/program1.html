@@ -1,26 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Program 1</title>
+    <title>Program 1 - Calculator</title>
 </head>
 <body>
-    <h2>Number Calculator</h2>
+    <h2>Program 1: Sum, Difference, Product, Quotient</h2>
     <script>
-        var a = parseFloat(prompt("Enter the first number:"));
-        var b = parseFloat(prompt("Enter the second number:"));
+        var a = parseFloat(prompt("Enter first number:"));
+        var b = parseFloat(prompt("Enter second number:"));
         
-        console.log("Input Numbers:", a, "and", b);
-        
-        var addition = a + b;
-        var subtraction = a - b;
-        var multiplication = a * b;
-        var division = a / b;
-        
-        document.write("<h3>Results:</h3>");
-        document.write("Addition: " + a + " + " + b + " = " + addition + "<br>");
-        document.write("Subtraction: " + a + " - " + b + " = " + subtraction + "<br>");
-        document.write("Multiplication: " + a + " × " + b + " = " + multiplication + "<br>");
-        document.write("Division: " + a + " ÷ " + b + " = " + division + "<br>");
+        document.write("First Number: " + a + "<br>");
+        document.write("Second Number: " + b + "<br><br>");
+        document.write("Sum: " + (a + b) + "<br>");
+        document.write("Difference: " + (a - b) + "<br>");
+        document.write("Product: " + (a * b) + "<br>");
+        document.write("Quotient: " + (a / b) + "<br>");
     </script>
 </body>
 </html>

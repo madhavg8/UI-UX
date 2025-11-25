@@ -3,51 +3,74 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>College Fest 2025</title>
+    <title>College Fest 2025 - Home</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header id="main-header">
-      <h1 class="event-title">College Fest 2025</h1>
-      <p id="event-date">Date: 15th September 2025</p>
-      <p class="desc">
-        Welcome to the annual college fest! Join us for a day of fun, learning,
-        and competition.
+      <h1>College Fest 2025</h1>
+      <p><strong>Date:</strong> 15th - 17th September 2025</p>
+      <p>
+        Welcome to the annual college fest! Join us for fun, learning, and
+        competitions.
       </p>
-      <nav>
-        <a href="index.html">Home</a> | <a href="events.html">Events</a> |
-        <a href="schedule.html">Schedule</a> |
-        <a href="register.html">Register</a> |
-        <a href="gallery.html">Gallery</a> |
-        <a href="contact.html">Contact & FAQs</a>
+      <nav class="nav-container">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="events.html" class="nav-link">Events</a>
+        <a href="schedule.html" class="nav-link">Schedule</a>
+        <a href="register.html" class="nav-link">Register</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="contact.html" class="nav-link">Contact & FAQs</a>
       </nav>
     </header>
-    <main>
-      <section>
-        <h2>About the Fest</h2>
-        <p>
-          Our college fest brings together students from all departments to
-          showcase their talents and compete in various events. Don't miss out!
-        </p>
-      </section>
-      <section class="video-section">
-        <h2>Event Highlights</h2>
-        <video
-          controls
-          poster="https://images.unsplash.com/photo-1465101178521-c1a2b1c6413c?auto=format&fit=crop&w=600&q=80"
-          width="100%"
-        >
-          <source
-            src="https://www.w3schools.com/html/mov_bbb.mp4"
-          />
-          Your browser does not support the video tag.
-        </video>
-      </section>
-    </main>
-    <footer>
+
+    <main id="main-content">
+      <h2 class="section-title">About the Fest</h2>
       <p>
-        Follow us: <a href="#">Instagram</a> | <a href="#">Facebook</a> |
-        <a href="#">Twitter</a>
+        Our college fest brings together students from all departments to
+        showcase their talents and compete in various events. This is the
+        biggest annual event of our college.
+      </p>
+
+      <h2 class="section-title">Event Highlights</h2>
+      <div class="highlights-container">
+        <div class="highlight-item">
+          <strong>5+</strong><br />Exciting Competitions
+        </div>
+        <div class="highlight-item">
+          <strong>Live</strong><br />Performances
+        </div>
+        <div class="highlight-item">
+          <strong>Rs. 50,000</strong><br />Prize Pool
+        </div>
+        <div class="highlight-item"><strong>Free</strong><br />Entry</div>
+      </div>
+
+      <h2 class="section-title">Previous Event Highlights</h2>
+      <div class="video-section">
+        <div class="video-container">
+          <video controls poster="assets/highlight-poster.jpg">
+            <source src="assets/highlights.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+
+      <h2 class="section-title">Quick Links</h2>
+      <ul>
+        <li><a href="events.html">View all events and competitions</a></li>
+        <li><a href="schedule.html">Check event schedule and timings</a></li>
+        <li><a href="register.html">Register as a participant</a></li>
+        <li><a href="gallery.html">Browse photos from previous years</a></li>
+      </ul>
+    </main>
+
+    <footer id="main-footer">
+      <p>
+        Follow us:
+        <a href="https://instagram.com" target="_blank">Instagram</a> |
+        <a href="https://facebook.com" target="_blank">Facebook</a> |
+        <a href="https://twitter.com" target="_blank">Twitter</a>
       </p>
       <p>&copy; 2025 College Fest</p>
     </footer>

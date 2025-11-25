@@ -2,104 +2,161 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background: #f8f9fa;
-  color: #222;
+  background: #f5f5f5;
+  color: #333;
 }
+
 header {
   background: #0055a5;
   color: #fff;
-  padding: 20px 0;
+  padding: 20px;
   text-align: center;
 }
+
+header h1 {
+  color: #fff;
+  margin: 0 0 10px 0;
+}
+
+header p {
+  margin: 5px 0;
+}
+
+nav {
+  margin-top: 15px;
+}
+
 nav a {
   color: #fff;
   text-decoration: none;
   margin: 0 10px;
-  font-weight: bold;
 }
+
 nav a:hover {
   text-decoration: underline;
 }
+
 main {
   padding: 20px;
+  margin-bottom: 70px;
 }
+
 h1,
 h2 {
   color: #0055a5;
 }
+
+h2 {
+  border-bottom: 2px solid #0055a5;
+  padding-bottom: 8px;
+}
+
 ul,
 ol {
-  padding-left: 20px;
+  padding-left: 25px;
 }
+
+li {
+  padding: 8px 0;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
-  margin: 20px 0;
+  margin: 15px 0;
+  background: #fff;
 }
-table,
+
 th,
 td {
   border: 1px solid #ccc;
-}
-th,
-td {
   padding: 10px;
   text-align: left;
 }
+
+th {
+  background: #0055a5;
+  color: #fff;
+}
+
+tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
 form {
   background: #fff;
   padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   max-width: 400px;
   margin: 0 auto;
+  border: 1px solid #ddd;
 }
+
 label {
   display: block;
   margin-top: 10px;
+  font-weight: bold;
 }
+
 input,
 select,
-button {
+textarea {
   width: 100%;
   padding: 8px;
   margin-top: 5px;
-  margin-bottom: 15px;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  box-sizing: border-box;
 }
+
 button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 15px;
   background: #0055a5;
   color: #fff;
   border: none;
   cursor: pointer;
 }
+
 button:hover {
   background: #003d7a;
 }
+
 .gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   gap: 15px;
-  margin: 20px 0;
 }
+
 .gallery-grid img {
-  width: 100%;
+  width: 30%;
   height: 180px;
   object-fit: cover;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 2px solid #ddd;
 }
+
 footer {
-  background: #eee;
-  color: #333;
+  background: #333;
+  color: #fff;
   text-align: center;
-  padding: 15px 0;
-  margin-top: 30px;
+  padding: 15px;
   position: fixed;
   bottom: 0;
   width: 100%;
 }
 
-.about {
+footer a {
+  color: #7eb8ff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+a {
+  color: #0055a5;
+}
+
+a:hover {
+  color: #003d7a;
 }

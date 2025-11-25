@@ -8,73 +8,165 @@
   </head>
   <body>
     <header id="main-header">
-      <h1 class="event-title">Event Schedule</h1>
-      <nav>
-        <a href="index.html">Home</a> | <a href="events.html">Events</a> |
-        <a href="schedule.html">Schedule</a> |
-        <a href="register.html">Register</a> |
-        <a href="gallery.html">Gallery</a> |
-        <a href="contact.html">Contact & FAQs</a>
+      <h1>Event Schedule</h1>
+      <nav class="nav-container">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="events.html" class="nav-link">Events</a>
+        <a href="schedule.html" class="nav-link">Schedule</a>
+        <a href="register.html" class="nav-link">Register</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="contact.html" class="nav-link">Contact & FAQs</a>
       </nav>
     </header>
-    <main>
-      <section>
-        <h2>Schedule</h2>
-        <table class="schedule-table">
-          <thead>
-            <tr>
-              <th>Time</th>
-              <th>Event</th>
-              <th>Venue</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>09:00 AM</td>
-              <td>Quiz Competition</td>
-              <td>Auditorium</td>
-              <td>Upcoming</td>
-            </tr>
-            <tr>
-              <td>11:00 AM</td>
-              <td>Dance Battle</td>
-              <td>Main Hall</td>
-              <td>Upcoming</td>
-            </tr>
-            <tr>
-              <td>01:00 PM</td>
-              <td>Art Contest</td>
-              <td>Art Room</td>
-              <td>Upcoming</td>
-            </tr>
-            <tr>
-              <td>03:00 PM</td>
-              <td>Sports Meet</td>
-              <td>Sports Ground</td>
-              <td>Upcoming</td>
-            </tr>
-            <tr>
-              <td>05:00 PM</td>
-              <td>Hackathon</td>
-              <td>Lab 1</td>
-              <td>Upcoming</td>
-            </tr>
-          </tbody>
-        </table>
-        <audio controls style="width: 100%; margin-top: 20px">
-          <source
-            src="https://www.w3schools.com/html/horse.mp3"
-            type="audio/mpeg"
-          />
+
+    <main id="main-content">
+      <div class="audio-section">
+        <h3>Welcome Message</h3>
+        <p>Listen to our greeting message for participants:</p>
+        <audio controls>
+          <source src="assets/greeting.mp3" type="audio/mpeg" />
           Your browser does not support the audio element.
         </audio>
-      </section>
+      </div>
+
+      <h2 class="section-title">Day 1 - 15th September 2025</h2>
+      <table>
+        <tr>
+          <th>Time</th>
+          <th>Event</th>
+          <th>Venue</th>
+          <th>Status</th>
+        </tr>
+        <tr>
+          <td>09:00 AM</td>
+          <td>Inauguration Ceremony</td>
+          <td>Main Auditorium</td>
+          <td>Upcoming</td>
+        </tr>
+        <tr>
+          <td>10:30 AM</td>
+          <td>Quiz Competition</td>
+          <td>Seminar Hall</td>
+          <td>Upcoming</td>
+        </tr>
+        <tr>
+          <td>02:00 PM</td>
+          <td>Art Contest</td>
+          <td>Art Room</td>
+          <td>Upcoming</td>
+        </tr>
+        <tr>
+          <td>04:00 PM</td>
+          <td>Dance Battle</td>
+          <td>Main Hall</td>
+          <td>Upcoming</td>
+        </tr>
+      </table>
+
+      <h2 class="section-title">Day 2 - 16th September 2025</h2>
+      <table>
+        <tr>
+          <th>Time</th>
+          <th>Event</th>
+          <th>Venue</th>
+          <th>Status</th>
+        </tr>
+        <tr>
+          <td>09:00 AM</td>
+          <td>Hackathon Starts</td>
+          <td>Computer Lab</td>
+          <td>Upcoming</td>
+        </tr>
+        <tr>
+          <td>11:00 AM</td>
+          <td>Cricket Tournament</td>
+          <td>Sports Ground</td>
+          <td>Upcoming</td>
+        </tr>
+        <tr>
+          <td>02:00 PM</td>
+          <td>Coding Challenge</td>
+          <td>Computer Lab</td>
+          <td>Upcoming</td>
+        </tr>
+        <tr>
+          <td>05:00 PM</td>
+          <td>Music Night</td>
+          <td>Open Air Theatre</td>
+          <td>Upcoming</td>
+        </tr>
+      </table>
+
+      <h2 class="section-title">Day 3 - 17th September 2025</h2>
+      <table>
+        <tr>
+          <th>Time</th>
+          <th>Event</th>
+          <th>Venue</th>
+          <th>Status</th>
+        </tr>
+        <tr>
+          <td>09:00 AM</td>
+          <td>Hackathon Judging</td>
+          <td>Computer Lab</td>
+          <td>Upcoming</td>
+        </tr>
+        <tr>
+          <td>11:00 AM</td>
+          <td>Football Match</td>
+          <td>Sports Ground</td>
+          <td>Upcoming</td>
+        </tr>
+        <tr>
+          <td>03:00 PM</td>
+          <td>Athletics</td>
+          <td>Sports Ground</td>
+          <td>Upcoming</td>
+        </tr>
+        <tr>
+          <td>05:00 PM</td>
+          <td>Prize Distribution</td>
+          <td>Main Auditorium</td>
+          <td>Upcoming</td>
+        </tr>
+      </table>
+
+      <h2 class="section-title">Previous Year Results (2024)</h2>
+      <table>
+        <tr>
+          <th>Event</th>
+          <th>Winner</th>
+          <th>Runner Up</th>
+        </tr>
+        <tr>
+          <td>Hackathon</td>
+          <td>Team CodeBreakers</td>
+          <td>Team Innovators</td>
+        </tr>
+        <tr>
+          <td>Quiz Competition</td>
+          <td>Rahul & Priya</td>
+          <td>Amit & Sneha</td>
+        </tr>
+        <tr>
+          <td>Dance Battle</td>
+          <td>Groove Masters</td>
+          <td>Dance Divas</td>
+        </tr>
+        <tr>
+          <td>Art Contest</td>
+          <td>Ananya S.</td>
+          <td>Vikram K.</td>
+        </tr>
+      </table>
     </main>
-    <footer>
+
+    <footer id="main-footer">
       <p>
-        Follow us: <a href="#">Instagram</a> | <a href="#">Facebook</a> |
-        <a href="#">Twitter</a>
+        Follow us:
+        <a href="https://instagram.com" target="_blank">Instagram</a> |
+        <a href="https://facebook.com" target="_blank">Facebook</a> |
+        <a href="https://twitter.com" target="_blank">Twitter</a>
       </p>
       <p>&copy; 2025 College Fest</p>
     </footer>

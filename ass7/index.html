@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To-Do List</title>
+    <style>
+        body {padding: 20px; }
+        #taskForm { margin-bottom: 20px; }
+        #taskForm input, #taskForm textarea { display: block; margin: 5px 0; padding: 5px; width: 300px; }
+        #taskForm button { padding: 8px 15px; margin-top: 10px; }
+        .task { border: 1px solid #ccc; padding: 10px; margin: 10px 0; }
+        .task button { margin-right: 5px; }
+        .completed { text-decoration: line-through; color: gray; }
+    </style>
+</head>
+<body>
+    <h1>To-Do List</h1>
+    
+    <div id="taskForm">
+        <input type="text" id="taskTitle" placeholder="Task Title">
+        <textarea id="taskDesc" placeholder="Task Description"></textarea>
+        <button onclick="addTask()">Add Task</button>
+    </div>
+    
+    <div id="taskList"></div>
+    
+    <script>
+        function addTask() {
+            var title = document.getElementById("taskTitle").value;
+            var desc = document.getElementById("taskDesc").value;
+            
+            if (title.trim() === "") {
+                alert("Please enter a task title");
+                return;
+            }
+            
+            var taskDiv = document.createElement("div");
+            taskDiv.className = "task";
+            
+            taskDiv.innerHTML = 
+                '<h3 class="title">' + title + '</h3>' +
+                '<p class="desc">' + desc + '</p>' +
+                '<button onclick="toggleComplete(this)">Mark as Completed</button>' +
+                '<button onclick="editTask(this)">Edit</button>' +
+                '<button onclick="deleteTask(this)">Delete</button>';
+            
+            document.getElementById("taskList").appendChild(taskDiv);
+            
+            document.getElementById("taskTitle").value = "";
+            document.getElementById("taskDesc").value = "";
+        }
+        
+        function toggleComplete(btn) {
+            console.log (btn);
+            var taskDiv = btn.parentElement;
+            var titleEl = taskDiv.querySelector(".title");
+            var descEl = taskDiv.querySelector(".desc");
+            
+            if (titleEl.classList.contains("completed")) {
+                titleEl.classList.remove("completed");
+                descEl.classList.remove("completed");
+                btn.textContent = "Mark as Completed";
+            } else {
+                titleEl.classList.add("completed");
+                descEl.classList.add("completed");
+                btn.textContent = "Mark as Incomplete";
+            }
+        }
+        
+        function deleteTask(btn) {
+            var taskDiv = btn.parentElement;
+            taskDiv.remove();
+        }
+        
+        function editTask(btn) {
+            var taskDiv = btn.parentElement;
+            var titleEl = taskDiv.querySelector(".title");
+            var descEl = taskDiv.querySelector(".desc");
+            
+            if (btn.textContent === "Edit") {
+                var currentTitle = titleEl.textContent;
+                var currentDesc = descEl.textContent;
+                
+                titleEl.innerHTML = '<input type="text" class="editTitle" value="' + currentTitle + '">';
+                descEl.innerHTML = '<textarea class="editDesc">' + currentDesc + '</textarea>';
+                btn.textContent = "Save";
+            } else {
+                var newTitle = taskDiv.querySelector(".editTitle").value;
+                var newDesc = taskDiv.querySelector(".editDesc").value;
+                
+                titleEl.textContent = newTitle;
+                descEl.textContent = newDesc;
+                btn.textContent = "Edit";
+            }
+        }
+    </script>
+</body>
+</html>

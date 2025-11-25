@@ -8,48 +8,56 @@
   </head>
   <body>
     <header id="main-header">
-      <h1 class="event-title">Participant Registration</h1>
-      <nav>
-        <a href="index.html">Home</a> | <a href="events.html">Events</a> |
-        <a href="schedule.html">Schedule</a> |
-        <a href="register.html">Register</a> |
-        <a href="gallery.html">Gallery</a> |
-        <a href="contact.html">Contact & FAQs</a>
+      <h1>Event Registration</h1>
+      <nav class="nav-container">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="events.html" class="nav-link">Events</a>
+        <a href="schedule.html" class="nav-link">Schedule</a>
+        <a href="register.html" class="nav-link">Register</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="contact.html" class="nav-link">Contact & FAQs</a>
       </nav>
     </header>
-    <main>
-      <section>
-        <h2>Register for Events</h2>
-        <form action="#" method="post" id="reg-form">
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" required /><br />
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required /><br />
-          <label for="event">Select Event:</label>
-          <select id="event" name="event" required>
-            <option value="quiz">Quiz Competition</option>
-            <option value="dance">Dance Battle</option>
-            <option value="art">Art Contest</option>
-            <option value="sports">Sports Meet</option>
-            <option value="hackathon">Hackathon</option></select
-          ><br />
-          <label for="year">Year:</label>
-          <input
-            type="number"
-            id="year"
-            name="year"
-            min="1"
-            max="4"
-            required
-          /><br />
-          <button type="submit">Register</button>
-        </form>
-      </section>
+
+    <main id="main-content">
+      <h2 class="section-title">Register for College Fest 2025</h2>
+      <p>Fill out the form below to register for events.</p>
+
+      <form class="registration-form" action="#" method="post">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" required />
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required />
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required />
+
+        <label for="college">College Name:</label>
+        <input type="text" id="college" name="college" placeholder="Enter your college name" required />
+
+        <label for="year">Year of Study:</label>
+        <select id="year" name="year" required>
+          <option value="">Select Year</option>
+          <option value="1">1st Year</option>
+          <option value="2">2nd Year</option>
+          <option value="3">3rd Year</option>
+          <option value="4">4th Year</option>
+        </select>
+
+        
+        
+        <button type="submit">Submit Registration</button>
+        <button type="reset">Clear Form</button>
+      </form>
     </main>
-    <footer>
+
+    <footer id="main-footer">
       <p>
-        Follow us: <a href="#">Instagram</a> | <a href="#">Facebook</a> |
-        <a href="#">Twitter</a>
+        Follow us:
+        <a href="https://instagram.com" target="_blank">Instagram</a> |
+        <a href="https://facebook.com" target="_blank">Facebook</a> |
+        <a href="https://twitter.com" target="_blank">Twitter</a>
       </p>
       <p>&copy; 2025 College Fest</p>
     </footer>
